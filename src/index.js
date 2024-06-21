@@ -1,7 +1,13 @@
-console.log('Привет мир)))');
+import React from "react";
+import ReactDom from "react-dom/client";
 
-import { User } from './user';
+// let element = <h1>Привет.) Реакт работает.)</h1>;
 
-let u = new User('Luke', 'SkyWalker');
+let messages = ['Привет, Друг!)', 'Как твои дела?'];
+const Message = (props) => <div>{props.text}</div>;
 
-console.log(u.sayHi());
+const MessageList = (props) => props.messages.map(message => <Message text={message} />);
+
+const domContainer = document.getElementById('root');
+const root = ReactDom.createRoot(domContainer);
+root.render(<MessageList messages={messages} />);
