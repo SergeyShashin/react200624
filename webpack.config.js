@@ -7,6 +7,16 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+      }
+    ]
+
+  },
   plugins: [
     new HtmlWebpackPlugin({
       teamplate: path.resolve(__dirname, 'src', 'index.html'),
