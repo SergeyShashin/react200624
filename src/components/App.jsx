@@ -21,8 +21,9 @@ export class App extends Component {
   render() {
     let { isVisible } = this.state;
     return (
-      <div onClick={this.handleToggle}>
-        {isVisible && <Counter />}
+      <div>
+        {isVisible && <Counter initialValue={5}/>}
+        <br />
         <button onClick={this.handleToggle}>toggle</button>
 
       </div>
