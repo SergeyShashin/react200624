@@ -11,7 +11,7 @@ export class App extends Component {
   }
 
   handleClick = (e) => {
-    this.setState(prevState => prevState.counter += Number(e.target.dataset.counter));
+    this.setState(prevState => ({ counter: prevState.counter + Number(e.target.dataset.counter) }));
   }
 
   render() {
