@@ -19,7 +19,7 @@ export class App extends Component {
     return (
       <div>
         <h3>Привет из App</h3>
-        <button data-counter={+1} onClick={this.handleClick}>+</button>
+        <button data-counter={1} onClick={this.handleClick}>+</button>
         <span>{counter}</span>
         <button data-counter={-1} onClick={this.handleClick}>-</button>
       </div>
