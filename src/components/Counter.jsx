@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import { PropTypes } from 'prop-types';
 
 export class Counter extends Component {
+  static propTypes = {
+    initialValue: PropTypes.number
+  }
   constructor(props) {
     super(props);
+
 
     this.state = {
       counter: this.props.initialValue,
