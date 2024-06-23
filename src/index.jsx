@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDom from "react-dom/client";
-import { App } from "components/App";
+// import { App } from "components/App";
+import { Messenger } from "components/Messenger";
 
-console.log(App);
+// console.log(App);
 
 // let element = <h1>Привет.) Реакт работает.)</h1>;
 
@@ -14,4 +15,4 @@ console.log(App);
 const domContainer = document.getElementById('root');
 const root = ReactDom.createRoot(domContainer);
 
-root.render(<App />);
+root.render(<Messenger />);

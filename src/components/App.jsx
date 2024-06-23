@@ -22,7 +22,7 @@ export class App extends Component {
     let { isVisible } = this.state;
     return (
       <div>
-        {isVisible && <Counter initialValue={5}/>}
+        {isVisible && <Counter />}
         <br />
         <button onClick={this.handleToggle}>toggle</button>
 
