@@ -14,7 +14,7 @@ export class Message extends Component {
   render() {
     return (
       <li>
-        <span>{this.props.message.author}:</span>
+        <span>{this.props.message.author}: </span>
         <span>{this.props.message.text}</span>
       </li>
     );

@@ -14,9 +14,15 @@ export class Messenger extends Component {
   }
 
   handleMessage = (e) => {
-    console.log(e.author);
-    console.log(e.text);
-    this.setState({ messages: this.state.messages.concat({author: e.author, text: e.text}) });
+    this.setState({ messages: this.state.messages.concat({ author: e.author, text: e.text }) });
+  };
+
+  componentDidUpdate() {
+    let lastMessages = this.state.messages[this.state.messages.length - 1];
+
+    if (lastMessages.author !== 'Bot') {
+      this.setState({ messages: this.state.messages.concat({ author:'Bot', text: `${lastMessages.author}, Ваше сообщение получено.` }) });
+    }
   }
 
 
