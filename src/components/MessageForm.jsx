@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 export class MessageForm extends Component {
+
   constructor(props) {
     super(props);
 
@@ -9,28 +11,28 @@ export class MessageForm extends Component {
       text: ''
     };
 
-    console.log(this.props.onSend)
-    
+  }
+
+  static propTypes = {
+    onsend: PropTypes.func,
   }
 
   handleChangeAuthor = (e) => {
-    this.setState({author:e.target.value});
-    console.log(this.state);
-  };
-  
-  handleChangeText = (e) => {
-    this.setState({text:e.target.value});
-    console.log(this.state);
+    this.setState({ author: e.target.value });
   };
 
-  sendData=()=>{
-    this.props.onSend({author:this.state.author, text: this.state.text});
+  handleChangeText = (e) => {
+    this.setState({ text: e.target.value });
+  };
+
+  sendData = () => {
+    this.props.onSend({ author: this.state.author, text: this.state.text });
+    this.setState({ text: '' });
   }
 
 
   render() {
-    const { author } = this.state;
-    const { text } = this.state;
+    const { author, text } = this.state;
     return (
       <div>
         <input value={author} type="text" placeholder="author" onChange={this.handleChangeAuthor} />
