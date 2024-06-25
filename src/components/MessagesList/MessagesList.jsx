@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Message } from "components/Message";
+import { Message } from "components/Message/Message";
 
 export class MessagesList extends Component {
   constructor(props) {

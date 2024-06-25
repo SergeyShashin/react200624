@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { MessageForm } from "components/MessageForm";
-import { MessagesList } from "components/MessagesList";
+import { MessageForm } from "components/MessageForm/MessageForm";
+import { MessagesList } from "components/MessagesList/MessagesList";
 
 export class Messenger extends Component {
   constructor(props) {

@@ -1,3 +1,4 @@
+import './Message.scss';
 import React, { Component } from "react";
 
 export class Message extends Component {
@@ -5,7 +6,7 @@ export class Message extends Component {
     super(props);
 
     this.state = {
-      
+
     };
 
   }
@@ -13,7 +14,7 @@ export class Message extends Component {
 
   render() {
     return (
-      <li>
+      <li className='message'>
         <span>{this.props.message.author}: </span>
         <span>{this.props.message.text}</span>
       </li>
