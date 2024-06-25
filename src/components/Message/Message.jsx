@@ -1,5 +1,6 @@
-import './Message.css';
+import './Message.scss';
 import React, { Component } from "react";
+import classNames from 'classnames';
 
 export class Message extends Component {
   constructor(props) {
@@ -11,12 +12,22 @@ export class Message extends Component {
 
   }
 
+  get direction() {
+    return this.props.message.author === 'Bot' ? 'end' : 'start'
+  }
+
   render() {
+    const classes = classNames('message', {
+      'message-owner': this.props.message.author !== 'Bot',
+      'message-companion': this.props.message.author === 'Bot'
+    });
+
     return (
-      <p className='message'>
-        <span>{this.props.message.author}: </span>
-        <span>{this.props.message.text}</span>
-      </p>
+      // <div className='message' style={{ alignSelf: `flex-${this.direction}` }}>
+      <div classes={classNames}>
+        <div>{this.props.message.author}: </div>
+        <div>{this.props.message.text}</div>
+      </div>
     );
   }
 }

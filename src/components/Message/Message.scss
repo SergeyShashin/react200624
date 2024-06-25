@@ -1,0 +1,12 @@
+.message {
+  color: lightseagreen;
+  
+  &-owner {
+    align-self: flex-start;
+  }
+
+  &-companion {
+    align-self: flex-end;
+  }
+}
+
