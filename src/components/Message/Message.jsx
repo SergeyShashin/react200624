@@ -1,4 +1,4 @@
-import './Message.scss';
+import './Message.css';
 import React, { Component } from "react";
 
 export class Message extends Component {
@@ -10,7 +10,6 @@ export class Message extends Component {
     };
 
   }
-
 
   render() {
     return (

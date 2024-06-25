@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom/client";
 // import { App } from "components/App";
-import { Messenger } from "components/Messenger/Messenger";
+import { Messenger } from "components/Messenger";
 
 // console.log(App);
 
