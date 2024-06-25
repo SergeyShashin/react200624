@@ -13,10 +13,10 @@ export class Message extends Component {
 
   render() {
     return (
-      <li className='message'>
+      <p className='message'>
         <span>{this.props.message.author}: </span>
         <span>{this.props.message.text}</span>
-      </li>
+      </p>
     );
   }
 }

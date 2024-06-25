@@ -1,3 +1,5 @@
+import './MessagesList.css';
+
 import React, { Component } from "react";
 import { Message } from "components/Message";
 
@@ -11,16 +13,14 @@ export class MessagesList extends Component {
 
   }
 
-
-
   render() {
-    const {messages} = this.props;
+    const { messages } = this.props;
     return (
-      <ul>
+      <div className='messagesList'>
         <h3>Сообщения:</h3>
-        {messages.map((message, idx) => <Message message={message} key={idx}/>)}
+        {messages.map((message, idx) => <Message message={message} key={idx} />)}
 
-      </ul>
+      </div>
     );
   }
 }
