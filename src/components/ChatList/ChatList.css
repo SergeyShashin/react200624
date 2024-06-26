@@ -1,0 +1,6 @@
+.chatList {
+  color: lightseagreen;
+  width: 100%;
+  max-width: 360px
+  /* overflow-y: scroll; */
+}

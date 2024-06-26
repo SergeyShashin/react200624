@@ -1,8 +1,8 @@
 import './Messenger.css';
 
 import React, { Component } from "react";
-import { MessageForm } from "components/MessageForm";
-import { MessagesList } from "components/MessagesList";
+import {Layout} from "components/Layout"
+
 
 export class Messenger extends Component {
   constructor(props) {
@@ -14,24 +14,10 @@ export class Messenger extends Component {
 
   }
 
-  handleMessage = (e) => {
-    this.setState({ messages: this.state.messages.concat({ author: e.author, text: e.text }) });
-  };
-
-  componentDidUpdate() {
-    let { author } = this.state.messages[this.state.messages.length - 1];
-
-    if (author !== 'Bot') {
-      setTimeout(() => this.setState({ messages: this.state.messages.concat({ author: 'Bot', text: `${author}, Ваше сообщение получено.` }) }),
-        888);
-    }
-  }
-
   render() {
     return (
       <div className='messenger'>
-        <MessageForm onSend={this.handleMessage} />
-        <MessagesList messages={this.state.messages} />
+        <Layout/>
       </div>
     );
   }
