@@ -17,7 +17,6 @@ export class MessagesList extends Component {
     const { messages } = this.props;
     return (
       <div className='messagesList'>
-        <h3>Сообщения:</h3>
         {messages.map((message, idx) => <Message message={message} key={idx} />)}
 
       </div>

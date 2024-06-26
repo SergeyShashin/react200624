@@ -1,5 +1,10 @@
+import './MessageForm.css';
+
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import SendIcon from '@mui/icons-material/Send';
 
 export class MessageForm extends Component {
 
@@ -36,14 +41,13 @@ export class MessageForm extends Component {
     };
   }
 
-
   render() {
     const { author, text } = this.state;
     return (
-      <div>
-        <input value={author} type="text" placeholder="author" onChange={this.handleChangeAuthor} />
-        <input value={text} type="text" placeholder="textMessage" onChange={this.handleChangeText} onKeyDown={this.handleCtrlEnter} />
-        <input type="submit" onClick={this.sendData} />
+      <div className="messageForm">
+        <TextField label="author" variant="standard" value={author} onChange={this.handleChangeAuthor} />
+        <TextField label="text" variant="standard" value={text} onChange={this.handleChangeText} onKeyDown={this.handleCtrlEnter} />
+        <Button label="send" onClick={this.sendData} variant="text" endIcon={<SendIcon />} size='large'/>
       </div>
     );
   }

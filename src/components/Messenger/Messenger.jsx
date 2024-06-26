@@ -30,7 +30,6 @@ export class Messenger extends Component {
   render() {
     return (
       <div className='messenger'>
-        <h2>Messenger</h2>
         <MessageForm onSend={this.handleMessage} />
         <MessagesList messages={this.state.messages} />
       </div>
