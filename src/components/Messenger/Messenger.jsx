@@ -1,3 +1,5 @@
+import './Messenger.css';
+
 import React, { Component } from "react";
 import { MessageForm } from "components/MessageForm";
 import { MessagesList } from "components/MessagesList";
@@ -7,8 +9,7 @@ export class Messenger extends Component {
     super(props);
 
     this.state = {
-      messages: [{ author: 'Автор', text: 'Текст сообщения.' }]
-
+      messages: []
     };
 
   }
@@ -28,7 +29,7 @@ export class Messenger extends Component {
 
   render() {
     return (
-      <div>
+      <div className='messenger'>
         <h2>Messenger</h2>
         <MessageForm onSend={this.handleMessage} />
         <MessagesList messages={this.state.messages} />

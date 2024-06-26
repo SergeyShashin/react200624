@@ -30,13 +30,19 @@ export class MessageForm extends Component {
     this.setState({ text: '' });
   }
 
+  handleCtrlEnter = (e) => {
+    if (e.ctrlKey && e.keyCode === 13) {
+      this.sendData();
+    };
+  }
+
 
   render() {
     const { author, text } = this.state;
     return (
       <div>
         <input value={author} type="text" placeholder="author" onChange={this.handleChangeAuthor} />
-        <input value={text} type="text" placeholder="textMessage" onChange={this.handleChangeText} />
+        <input value={text} type="text" placeholder="textMessage" onChange={this.handleChangeText} onKeyDown={this.handleCtrlEnter} />
         <input type="submit" onClick={this.sendData} />
       </div>
     );

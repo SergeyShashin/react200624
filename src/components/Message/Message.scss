@@ -1,5 +1,10 @@
 .message {
-  color: lightseagreen;
+  background-color: lightseagreen;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 20px;
+  margin: 5px;
   
   &-owner {
     align-self: flex-start;
@@ -7,6 +12,9 @@
 
   &-companion {
     align-self: flex-end;
+  }
+  &-sender{
+    font-size: 14px;
   }
 }
 
