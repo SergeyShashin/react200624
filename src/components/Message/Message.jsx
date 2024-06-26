@@ -12,21 +12,22 @@ export class Message extends Component {
 
   }
 
-  get direction() {
-    return this.props.message.author === 'Bot' ? 'end' : 'start'
-  }
+  // get direction() {
+  //   return this.props.message.author === 'Bot' ? 'end' : 'start';
+  // }
 
   render() {
+    const { author, text } = this.props.message;
     const classes = classNames('message', {
-      'message-owner': this.props.message.author !== 'Bot',
-      'message-companion': this.props.message.author === 'Bot'
+      'message-owner': author !== 'Bot',
+      'message-companion': author === 'Bot'
     });
 
     return (
       // <div className='message' style={{ alignSelf: `flex-${this.direction}` }}>
       <div className={classes}>
-        <div>{this.props.message.author}: </div>
-        <div>{this.props.message.text}</div>
+        <div>{author}: </div>
+        <div>{text}</div>
       </div>
     );
   }
