@@ -24,7 +24,7 @@ export class Message extends Component {
 
     return (
       // <div className='message' style={{ alignSelf: `flex-${this.direction}` }}>
-      <div classes={classNames}>
+      <div className={classes}>
         <div>{this.props.message.author}: </div>
         <div>{this.props.message.text}</div>
       </div>
