@@ -1,9 +1,10 @@
 import 'assets/global.css';
 
 import React from "react";
-import ReactDom from "react-dom/client";
+import { createRoot } from "react-dom/client";
 // import { App } from "components/App";
-import { Messenger } from "components/Messenger";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { routes } from './routes';
 
 // console.log(App);
 
@@ -14,7 +15,12 @@ import { Messenger } from "components/Messenger";
 
 // const MessageList = (props) => props.messages.map(message => <Message text={message} />);
 
-const domContainer = document.getElementById('root');
-const root = ReactDom.createRoot(domContainer);
+const root = createRoot(document.getElementById('root'));
 
-root.render(<Messenger />);
+root.render(
+  <BrowserRouter>
+    <Routes>
+      {routes.map((route, idx) => <Route key={idx} {...route} />)}
+    </Routes>
+  </BrowserRouter>
+);
