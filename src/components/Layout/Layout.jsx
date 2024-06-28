@@ -22,6 +22,7 @@ export class Layout extends Component {
   };
 
   componentDidUpdate() {
+
     let { author } = this.state.messages[this.state.messages.length - 1];
 
     if (author !== 'Bot') {
@@ -31,9 +32,11 @@ export class Layout extends Component {
   }
 
   render() {
+    console.log(this.props);
+
     return (
       <div className="layout">
-        <Header/>
+        <Header />
         <div className='chatsAndMessages'>
           <ChatList />
           <div className='messages'>
