@@ -26,8 +26,8 @@ import { routes } from './routes';
 //     </BrowserRouter>
 //   }
 // }
-
-const root = createRoot(document.getElementById('root'));
+const HTMLElementForReact = document.getElementById('root'); 
+const root = createRoot(HTMLElementForReact);
 
 root.render(
   <BrowserRouter>

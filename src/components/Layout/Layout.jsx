@@ -23,17 +23,17 @@ export class Layout extends Component {
 
   componentDidUpdate() {
 
-    let { author } = this.state.messages[this.state.messages.length - 1];
+    if (this.state.messages.length) {
+      let { author } = this.state.messages[this.state.messages.length - 1];
 
-    if (author !== 'Bot') {
-      setTimeout(() => this.setState({ messages: this.state.messages.concat({ author: 'Bot', text: `${author}, Ваше сообщение получено.` }) }),
-        888);
+      if (author !== 'Bot') {
+        setTimeout(() => this.setState({ messages: this.state.messages.concat({ author: 'Bot', text: `${author}, Ваше сообщение получено.` }) }),
+          888);
+      }
     }
   }
 
   render() {
-    console.log(this.props);
-
     return (
       <div className="layout">
         <Header />

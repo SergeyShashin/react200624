@@ -1,7 +1,7 @@
 import './Messenger.css';
 
 import React, { Component } from "react";
-import {Layout} from "components/Layout";
+import { Layout } from "components/Layout";
 
 export class Messenger extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ export class Messenger extends Component {
   render() {
     return (
       <div className='messenger'>
-        <Layout/>
+        <Layout />
       </div>
     );
   }
